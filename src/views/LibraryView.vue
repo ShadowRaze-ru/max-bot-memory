@@ -149,7 +149,7 @@ async function saveCard(addAnother = false) {
     try {
       if (new URL(imageUrl).protocol !== 'https:') throw new Error('invalid protocol')
     } catch {
-      cardError.value = 'Укажите действительную HTTPS-ссылку на изображение.'
+      cardError.value = 'Укажите корректную ссылку на изображение.'
       return
     }
   }
@@ -456,8 +456,8 @@ function start(deckId: string) {
         <span v-else class="muted">Предпросмотр появится здесь</span>
       </div>
       <label class="field">
-        <span>Изображение к вопросу · ссылка HTTPS</span>
-        <input v-model="cardForm.imageUrl" type="url" placeholder="https://…" />
+        <span>Изображение к вопросу</span>
+        <input v-model="cardForm.imageUrl" type="url" placeholder="Вставьте ссылку на изображение" />
       </label>
       <img
         v-if="cardForm.imageUrl"
