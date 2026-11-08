@@ -223,21 +223,6 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   overflow: hidden;
 }
 
-.status-bar {
-  height: 48px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: none;
-  background: var(--bg-app);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.status-bar__indicators { display: flex; align-items: center; gap: 5px; }
-.status-bar__indicators svg { width: 16px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.status-bar__indicators svg:last-child { width: 22px; }
 .screen-content { flex: 1; min-height: 0; overflow-x: hidden; overflow-y: auto; scrollbar-width: none; }
 .screen-content::-webkit-scrollbar { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
