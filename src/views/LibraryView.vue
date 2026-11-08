@@ -450,9 +450,10 @@ function start(deckId: string) {
         <button type="button" aria-label="Вставить степень" @click="insertFormula('front', 'power')">xⁿ</button>
         <button type="button" aria-label="Вставить формулу отдельной строкой" @click="insertFormula('front', 'display')">∑</button>
       </div>
-      <div v-if="cardForm.front.includes('$')" class="preview">
+      <div class="preview">
         <strong>Предпросмотр вопроса</strong>
-        <MathText :text="cardForm.front" />
+        <MathText v-if="cardForm.front.trim()" :text="cardForm.front" />
+        <span v-else class="muted">Предпросмотр появится здесь</span>
       </div>
       <label class="field">
         <span>Изображение к вопросу · ссылка HTTPS</span>
@@ -475,9 +476,10 @@ function start(deckId: string) {
         <button type="button" aria-label="Вставить степень" @click="insertFormula('back', 'power')">xⁿ</button>
         <button type="button" aria-label="Вставить формулу отдельной строкой" @click="insertFormula('back', 'display')">∑</button>
       </div>
-      <div v-if="cardForm.back.includes('$')" class="preview">
+      <div class="preview">
         <strong>Предпросмотр ответа</strong>
-        <MathText :text="cardForm.back" />
+        <MathText v-if="cardForm.back.trim()" :text="cardForm.back" />
+        <span v-else class="muted">Предпросмотр появится здесь</span>
       </div>
       <label class="field">
         <span>Подсказка</span>
